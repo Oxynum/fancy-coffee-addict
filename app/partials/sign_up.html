@@ -1,0 +1,22 @@
+<h1 class="text-center">Login</h1>
+<div class="container">
+  <form name="myForm">
+    <div class="form-group">
+      <label for="email">Email*</label>
+      <input type="email" class="form-control" id="email" ng-model="user.email" required>
+    </div>
+    <div class="form-group">
+      <label for="username">Username*</label>
+      <input type="text" class="form-control" id="username" ng-model="user.username" required>
+    </div>
+    <div class="form-group">
+      <label for="password">Password*</label>
+      <input type="password" class="form-control" id="password" ng-model="user.password" required>
+    </div>
+    <div class="form-group">
+      <label for="password_confirmation">Password Confirmation*</label>
+      <input type="password" class="form-control" id="password_confirmation" ng-model="user.password_confirmation" required>
+    </div>
+    <button type="submit" class="btn btn-success btn-block" ng-click="methods.sign_up()" ng-disabled="myForm.$invalid">Submit</button>
+  </form>
+</div>

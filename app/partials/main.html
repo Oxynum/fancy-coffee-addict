@@ -1,0 +1,20 @@
+<div class="container">
+  <h2>
+    Hello {{user.username}}
+  </h2>
+  <button ng-hide="current_room" ng-click="methods.createRoom()" class="btn btn-primary">Find a coffee addict</button>
+  <div class="container" ng-show="current_room">
+    <div ng-show="!current_room.second_user_id">
+      En attente d'un utilisateur...
+    </div>
+    <ul>
+      <li ng-repeat="message in current_room.messages">
+        {{message.body}}
+      </li>
+    </ul>
+    <form ng-show="current_room.second_user_id" name="myForm">
+      <input type="text" ng-model="message" required>
+      <button type="submit" class="btn btn-success" ng-click="methods.sendMessage()" ng-disabled="myForm.$invalid">Send</button>
+    </form>
+  </div>
+</div>
